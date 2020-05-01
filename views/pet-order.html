@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>petOrder</title>
+</head>
+<body>
+<div class="container">
+    <h1>Order a pet?</h1>
+
+    <form action="#" method="post" class="form-horizontal">
+
+        <!-- get food -->
+        <div class="form-group">
+            <label for="food" class="col-sm-2 control-label">What kind of pet would you like to order?</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="food" id="food">
+            </div>
+        </div>
+
+        <!-- get meal -->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Select color
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Blue</a>
+                <a class="dropdown-item" href="#"> Purple</a>
+                <a class="dropdown-item" href="#">Red</a>
+            </div>
+        </div>
+
+        <div class="col-xs-3 ">
+            <input class="form-control btn btn-default"
+                   type="submit" value="Place Order">
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>

@@ -25,7 +25,8 @@ $f3->route('GET /', function() {
 //Default route
 $f3->route('GET /order', function() {
 
-    echo 'Order page';
+    $view = new Template();
+    echo $view->render('views/pet-order.html');
 });
 
 ////Breakfast route
