@@ -15,11 +15,17 @@ $f3 = Base::instance();
 
 //Default route
 $f3->route('GET /', function() {
-    echo '<h1>Welcome to my Pets Page</h1>';
-    echo "<a href='order'>Order a pet</a>";
 
-//    $view = new Template();
-//    echo $view->render('views/home.html');
+    $view = new Template();
+    echo $view->render('views/pet-home.html');
+    echo '<br>';
+    echo '<a href="order">Order a Pet</a>';
+});
+
+//Default route
+$f3->route('GET /order', function() {
+
+    echo 'Order page';
 });
 
 ////Breakfast route
