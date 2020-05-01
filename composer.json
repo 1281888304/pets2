@@ -1,0 +1,16 @@
+{
+  "name": "tostrander/328/pets2",
+  "authors": [
+    {
+      "name": "Qinghang Zhang",
+      "email": "tostrander@greenriver.edu"
+    },
+    {
+      "name": "Marcus Absher",
+      "email": "mabsher@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
