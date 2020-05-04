@@ -17,16 +17,34 @@ $f3 = Base::instance();
 $f3->route('GET /', function() {
 
     $view = new Template();
-    echo $view->render('views/pet-home.html');
+    echo $view->render('views/pet-info.html');
     echo '<br>';
     echo '<a href="order">Order a Pet</a>';
 });
 
 //Default route
-$f3->route('GET /order', function() {
+$f3->route('GET|POST /order', function() use ($f3) {
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        //Validate the data
+        if (empty($_POST['names'])) {
+
+            //Data is invalid
+            echo "Please supply a pet type";
+        } else {
+            $_SESSION['color'] = $_POST['color'];
+            $_SESSION['names'] = $_POST['names'];
+
+            //***Add the color to the session
+
+            //Redirect to the summary route
+            $f3->reroute("summary");
+        }
+    }
+
 
     $view = new Template();
-    echo $view->render('views/pet-order.html');
+    echo $view->render('views/order.html');
 });
 
 ////Breakfast route
@@ -85,14 +103,14 @@ $f3->route('GET /order', function() {
 //
 //});
 //
-////Breakfast route
-//$f3->route('GET /summary', function() {
-//    //echo '<h1>Thank you for your order!</h1>';
-//
-//    $view = new Template();
-//    echo $view->render('views/summary.html');
-//
-//});
+//Breakfast route
+$f3->route('GET /summary', function() {
+    //echo '<h1>Thank you for your order!</h1>';
+
+    $view = new Template();
+    echo $view->render('views/summary.html');
+
+});
 
 //Run F3
 $f3->run();
